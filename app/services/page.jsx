@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from 'next/link';
 import { ArrowRight, BadgeCheck, BriefcaseBusiness, FileCheck2, GraduationCap, Globe2, Handshake, Home, Plane, SearchCheck, WalletCards } from 'lucide-react';
 import Reveal from '@/components/Reveal';
@@ -22,6 +23,7 @@ export default function ServicesPage() {
   return (
     <section className="inner-page">
       <div className="container">
+        <Image src="/stydy, work, settle pic.png" alt="Next Step Private Limited" width={1200} height={900} />
         <Reveal className="page-hero">
           <div className="eyebrow">OUR SERVICES</div>
           <h1>Everything you need for your <span>next move.</span></h1>
