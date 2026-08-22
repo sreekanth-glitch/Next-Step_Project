@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" role="img" aria-label="Realistic animated globe with airplane orbiting the world">
+<defs>
+  <radialGradient id="space" cx="50%" cy="42%" r="75%">
+    <stop offset="0" stop-color="#17395d"/>
+    <stop offset=".55" stop-color="#07182c"/>
+    <stop offset="1" stop-color="#020811"/>
+  </radialGradient>
+  <radialGradient id="ocean" cx="35%" cy="28%" r="75%">
+    <stop offset="0" stop-color="#4eb9e8"/>
+    <stop offset=".38" stop-color="#176ea7"/>
+    <stop offset=".75" stop-color="#073b70"/>
+    <stop offset="1" stop-color="#021b3b"/>
+  </radialGradient>
+  <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#d8d49a"/>
+    <stop offset=".35" stop-color="#73985d"/>
+    <stop offset=".7" stop-color="#39704e"/>
+    <stop offset="1" stop-color="#1d4c42"/>
+  </linearGradient>
+  <radialGradient id="atmo" cx="50%" cy="50%" r="50%">
+    <stop offset=".72" stop-color="#56c8ff" stop-opacity="0"/>
+    <stop offset=".91" stop-color="#63d5ff" stop-opacity=".22"/>
+    <stop offset="1" stop-color="#8ce5ff" stop-opacity=".72"/>
+  </radialGradient>
+  <linearGradient id="route" x1="0" x2="1">
+    <stop offset="0" stop-color="#8ee7ff"/>
+    <stop offset=".5" stop-color="#fff"/>
+    <stop offset="1" stop-color="#8ee7ff"/>
+  </linearGradient>
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="7" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="soft">
+    <feGaussianBlur stdDeviation="18"/>
+  </filter>
+  <filter id="planeShadow">
+    <feDropShadow dx="0" dy="8" stdDeviation="7" flood-opacity=".45"/>
+  </filter>
+  <clipPath id="globeClip">
+    <circle cx="600" cy="390" r="255"/>
+  </clipPath>
+  <pattern id="stars" width="150" height="120" patternUnits="userSpaceOnUse">
+    <circle cx="18" cy="22" r="1.4" fill="#fff" opacity=".65"/>
+    <circle cx="83" cy="67" r="1" fill="#fff" opacity=".45"/>
+    <circle cx="132" cy="34" r="1.2" fill="#fff" opacity=".55"/>
+    <circle cx="44" cy="103" r=".8" fill="#fff" opacity=".4"/>
+  </pattern>
+  <style>
+    .label{font-family:Arial,sans-serif;fill:#fff}
+    .route{fill:none;stroke:url(#route);stroke-width:3;stroke-dasharray:9 10;opacity:.7}
+    .planePath{fill:none;stroke:none}
+    .plane{filter:url(#planeShadow);transform-box:fill-box;transform-origin:center}
+    .blink{animation:blink 4s ease-in-out infinite}
+    @keyframes blink{0%,100%{opacity:.25}50%{opacity:.8}}
+    @keyframes routePulse{0%,100%{opacity:.35}50%{opacity:1}}
+    .route{animation:routePulse 2.8s ease-in-out infinite}
+  </style>
+</defs>
+
+<!-- deep space -->
+<rect width="1200" height="760" fill="url(#space)"/>
+<rect width="1200" height="760" fill="url(#stars)" opacity=".7"/>
+<ellipse cx="600" cy="680" rx="390" ry="32" fill="#4dbce8" opacity=".13" filter="url(#soft)"/>
+
+<!-- orbital route -->
+<ellipse cx="600" cy="390" rx="315" ry="125" class="route"/>
+<ellipse cx="600" cy="390" rx="350" ry="145" fill="none" stroke="#68d8ff" stroke-width="1.5" stroke-dasharray="3 16" opacity=".35"/>
+
+<!-- atmosphere glow -->
+<circle cx="600" cy="390" r="278" fill="#4fc9ff" opacity=".13" filter="url(#glow)"/>
+<circle cx="600" cy="390" r="265" fill="url(#ocean)" stroke="#70d9ff" stroke-width="5"/>
+
+<!-- continents: stylized but realistic textured silhouettes -->
+<g clip-path="url(#globeClip)">
+  <g fill="url(#land)" opacity=".96">
+    <!-- North America -->
+    <path d="M390 265 C420 220 470 205 515 224 L540 250 520 275 495 275 475 302 450 305 430 337 405 323 414 290 388 280Z"/>
+    <!-- South America -->
+    <path d="M520 335 C550 350 567 382 560 414 L545 455 525 495 505 525 492 485 500 445 482 415 492 380Z"/>
+    <!-- Europe -->
+    <path d="M635 255 L665 238 700 245 720 265 700 282 675 275 650 290 625 276Z"/>
+    <!-- Africa -->
+    <path d="M650 295 C690 282 730 300 748 330 L735 380 720 425 695 465 668 440 660 395 635 355Z"/>
+    <!-- Asia -->
+    <path d="M700 245 C750 215 820 220 875 250 L905 285 875 305 835 300 810 320 765 300 725 310 700 285Z"/>
+    <!-- India / SE Asia -->
+    <path d="M805 315 L830 330 815 360 795 345Z"/>
+    <!-- Australia -->
+    <path d="M825 425 C865 410 910 425 930 455 L910 485 865 492 830 470Z"/>
+    <!-- Greenland -->
+    <path d="M515 190 L560 175 585 200 560 225 525 220Z"/>
+  </g>
+
+  <!-- terrain highlights -->
+  <path d="M390 265 C430 230 470 225 510 245 M655 255 C710 225 790 235 850 265 M660 315 C700 300 720 330 730 365"
+        fill="none" stroke="#d7d69d" stroke-width="10" opacity=".25"/>
+  <path d="M380 380 Q500 330 620 390 T850 370" fill="none" stroke="#fff" stroke-width="8" opacity=".06"/>
+
+  <!-- ocean light -->
+  <ellipse cx="525" cy="300" rx="160" ry="100" fill="#fff" opacity=".07"/>
+</g>
+
+<!-- atmospheric rim -->
+<circle cx="600" cy="390" r="265" fill="url(#atmo)" pointer-events="none"/>
+
+<!-- moving flight trail -->
+<path d="M285 390 C430 180 760 175 925 330" fill="none" stroke="#8de8ff" stroke-width="4" stroke-dasharray="8 13" opacity=".5"/>
+
+<!-- airplane group animated along the arc -->
+<g>
+  <animateMotion dur="8s" repeatCount="indefinite" rotate="auto"
+    path="M285,390 C430,180 760,175 925,330 C1010,410 915,525 750,545 C555,570 355,500 285,390"/>
+  <g class="plane" transform="scale(.9)">
+    <path d="M-55 3 L15 -8 L68 -1 L82 7 L68 15 L15 12 L-55 5 Z" fill="#f7fbff"/>
+    <path d="M-8 -6 L17 -48 L30 -48 L27 -7 Z" fill="#dce8f0"/>
+    <path d="M-2 10 L18 45 L31 45 L26 12 Z" fill="#dce8f0"/>
+    <path d="M-42 2 L-58 -17 L-48 -19 L-25 0 Z" fill="#dce8f0"/>
+    <path d="M-18 -1 L8 -1 L24 8 L8 13 L-18 7 Z" fill="#55bde8"/>
+    <circle cx="-28" cy="4" r="2.5" fill="#25384b"/>
+    <circle cx="-18" cy="5" r="2.5" fill="#25384b"/>
+    <circle cx="-8" cy="6" r="2.5" fill="#25384b"/>
+    <path d="M-65 4 L-95 4" stroke="#b9f2ff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+  </g>
+</g>
+
+<!-- route points -->
+<g fill="#d9f8ff" filter="url(#glow)">
+  <circle cx="300" cy="390" r="5"/>
+  <circle cx="905" cy="330" r="5"/>
+  <circle cx="750" cy="545" r="5"/>
+</g>
+
+<!-- subtle interface-style title -->
+<text x="600" y="82" text-anchor="middle" class="label" font-size="38" font-weight="700" letter-spacing="8">YOUR JOURNEY AROUND THE WORLD</text>
+<text x="600" y="115" text-anchor="middle" class="label" font-size="16" letter-spacing="4" opacity=".65">STUDY • WORK • SETTLE • EXPLORE</text>
+
+<!-- tiny city lights -->
+<g class="blink" fill="#ffe9a8">
+  <circle cx="676" cy="270" r="2"/><circle cx="704" cy="318" r="2"/>
+  <circle cx="747" cy="342" r="2"/><circle cx="823" cy="277" r="2"/>
+  <circle cx="865" cy="450" r="2"/><circle cx="525" cy="385" r="2"/>
+  <circle cx="475" cy="275" r="2"/>
+</g>
+
+<!-- foreground vignette -->
+<ellipse cx="600" cy="390" rx="315" ry="315" fill="none" stroke="#fff" stroke-opacity=".06" stroke-width="22"/>
+</svg>
