@@ -72,6 +72,13 @@ button, input { font: inherit; }
   max-width: 900px;
   height: auto;
   object-fit: contain;
+border-radius: 30px;
+
+  box-shadow:
+    0 25px 60px rgba(7, 27, 72, 0.18),
+    0 8px 20px rgba(7, 86, 164, 0.08);
+
+  overflow: hidden;
 }
 .hero-visual { position: relative; min-height: 550px; display: grid; place-items: center; }
 .continent { position: absolute; background: #2eaa4f; filter: drop-shadow(0 4px 5px rgba(0,0,0,.12)); }
@@ -115,9 +122,13 @@ button, input { font: inherit; }
     padding: 20px 0;
   }
 
-  .destination-svg {
-    width: 200%;
-    max-width: 600px;
-    height: auto;
+    .destination-svg {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 20px;
+  
+      box-shadow:
+        0 15px 35px rgba(7, 27, 72, 0.16),
+        0 5px 15px rgba(7, 86, 164, 0.07);
   }
 }
