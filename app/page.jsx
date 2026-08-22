@@ -34,7 +34,6 @@ export default function Home() {
           </Reveal>
           <Reveal className="hero-visual" delay={0.12}>
             <DestinationVisual />
-            <div className="floating-card float-one"><Sparkles size={16} /><b>Dream</b><span>Plan</span></div>
             <div className="floating-card float-two"><Target size={16} /><b>Next Step</b><span>Closer</span></div>
           </Reveal>
         </div>
