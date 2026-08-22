@@ -1,14 +1,33 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 export default function DestinationVisual() {
   return (
-    <div className="destination-visual" aria-label="3D-inspired abroad destinations illustration">
-      <div className="visual-glow" />
-      <div className="planet"><div className="planet-line" /><div className="continent c1" /><div className="continent c2" /><div className="continent c3" /></div>
-      <motion.div className="paper-plane" animate={{ x: [0, 12, 0], y: [0, -7, 0] }} transition={{ duration: 4, repeat: Infinity }}>✦</motion.div>
-      <div className="visual-caption"><span>EXPLORE</span><b>GLOBAL</b><em>OPPORTUNITIES</em></div>
+    <div className="destination-visual relative w-full overflow-hidden">
+      
+      {/* SVG Container */}
+      <main className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10]">
+        <img
+          src="/realistic-animated-global-airplane.svg"
+          alt="Global travel animation"
+          className="absolute inset-0 w-full h-full object-contain"
+        />
+      </main>
+
+      {/* Caption */}
+      <div className="visual-caption absolute bottom-5 left-1/2 -translate-x-1/2 text-center z-10">
+        <span className="block text-sm sm:text-base md:text-lg">
+          EXPLORE
+        </span>
+
+        <b className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+          GLOBAL
+        </b>
+
+        <em className="block text-sm sm:text-base md:text-lg not-italic">
+          OPPORTUNITIES
+        </em>
+      </div>
+
     </div>
   );
 }
