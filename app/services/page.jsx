@@ -23,7 +23,15 @@ export default function ServicesPage() {
   return (
     <section className="inner-page">
       <div className="container">
-        <Image src="/stydy, work, settle pic.png" alt="Next Step Private Limited" width={1200} height={900} />
+        <Image
+  src="/stydy, work, settle pic.png"
+  alt="Next Step Private Limited"
+  width={1200}
+  height={900}
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+  className="service img"
+  style={{ width: "100%", height: "auto" }}
+/>
         <Reveal className="page-hero">
           <div className="eyebrow">OUR SERVICES</div>
           <h1>Everything you need for your <span>next move.</span></h1>

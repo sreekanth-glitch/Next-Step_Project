@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from 'next/link';
 import { ArrowRight, BadgeCheck, Compass, HeartHandshake, Lightbulb, ShieldCheck, Target } from 'lucide-react';
 import Reveal from '@/components/Reveal';
@@ -13,6 +14,15 @@ export default function AboutPage() {
   return (
     <section className="inner-page">
       <div className="container">
+        <Image
+          src="/About.jpg"
+          alt="Next Step Private Limited"
+          width={1200}
+          height={900}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+          className="service img"
+          style={{ width: "100%", height: "auto" }}
+        />
         <Reveal className="page-hero">
           <div className="eyebrow">ABOUT NEXT STEP</div>
           <h1>Your ambition deserves a <span>clear pathway.</span></h1>
